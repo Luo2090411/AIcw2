@@ -1,0 +1,34 @@
+The project includes three Python scripts that work together to detect dangerous content related to SDG16. I follow the approach used in the HEARTS-Text-Stereotype-Detection project, where specific keywords are extracted and used to create labels for retraining, in order to calculate a danger score.
+
+The startup method is the same as the original project, and the dependency files and datasets are already placed in the root directory.
+
+
+
+
+The first script, prepare_sdg16_dataset.py, reads the original dataset and uses simple rules to decide whether each text is neutral, abusive, or very dangerous. It takes train_regard.csv as input and creates a new labeled file called SDG16_danger_dataset_rule_v2.csv.
+
+
+
+ The second script, SDG16_Danger_Training.py, uses this labeled file to train a model that can predict whether new text is dangerous or not. It loads SDG16_danger_dataset_rule_v2.csv and saves the trained model in the folder sdg16_bert_synthetic. 
+!!!      The training results of SDG16_Danger_Training.py are too large to upload to GitHub, so they have to be deleted.  Therefore, please run the program to generate a model; otherwise, subsequent operations will not be possible.               !!!
+
+
+
+
+The third script, Sentiment_Regard_Analysis.py, applies sentiment analysis, regard analysis, and the trained danger model to new data. It takes an input file such as MGSD – Expanded.csv and produces an output file with the text’s sentiment, regard, danger score, and final label. Together, these three scripts complete the process from preparing the data to training the model and analyzing new text.
+
+
+The closer the score under danger_label is to 1, the more "dangerous" it is.The JSON files in `original_data_set` are the original dataset, and the CSV file is the pre-processed version. `test_no_urls_truncated_regard.csv` and `train_regard.csv` in this directory are cropped datasets; please use these two for testing, as their core content is identical to the original files. These files can also be used to run HEARTS-Text-Stereotype-Detection.
+
+ I also tested the HEARTS-Text-Stereotype-Detection dataset, and the result is `MGSD_results.csv`.
+
+
+
+
+
+
+
+
+
+
+

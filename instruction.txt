@@ -1,0 +1,13 @@
+This directory contains two folders: 
+
+1. The HEARTS-Text-Stereotype-Detection-Original folder contains local reproduction results of the original HEARTS-Text-Stereotype-Detection. 
+
+
+2. The SafeText folder contains my modifications to HEARTS-Text-Stereotype-Detection, which can be run independently.
+
+
+
+
+
+
+

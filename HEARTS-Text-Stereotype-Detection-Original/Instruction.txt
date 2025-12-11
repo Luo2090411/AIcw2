@@ -1,0 +1,56 @@
+
+When I copied the original project to my local machine, the project files already contained the datasets or input dependencies required by each file. After successfully running and reproducing the output, the results appeared in the same directory as the Python files. Therefore, please check the original output before rerunning.(I also prepared a backup in the output folder.)
+
+
+To run this project, please follow the instructions in the original project( showed below ) . Note: Due to environmental and device issues, I have made minor modifications to the original project files and requirements to speed things up and fix bugs. If you encounter any issues running the project, please go to the backup file and copy the original files to replace them.I have not made any modifications to the file structure.
+
+
+!!!      The training results in the Model Training and Evaluation file are too large to upload to GitHub, so they have to be deleted.                 !!!
+
+/==================================================================/
+
+Features
+Exploratory Data Analysis (EDA): Analyze group distributions, text length, and sentiment/regard trends in EMGSD.
+Model Training & Evaluation: Train and test models (e.g., BERT, ALBERT-V2, logistic regression) on EMGSD with ablation studies.
+Explainability: Generate SHAP and LIME explanations to interpret predictions.
+LLM Bias Evaluation: Classify and evaluate bias in LLM outputs using neutral prompts derived from EMGSD.
+Quickstart
+Clone this repository:
+
+git clone https://github.com/username/HEARTS-Text-Stereotype-Detection.git
+cd HEARTS-Text-Stereotype-Detection
+Install dependencies:
+
+pip install -r requirements.txt
+Explore the modules (see details below).
+
+Modules
+1. Exploratory Data Analysis
+Scripts to perform basic analysis on EMGSD, available at Hugging Face.
+
+Initial_EDA: Analyze target group distribution, stereotype group distribution, text length, and frequency.
+Sentiment_Regard_Analysis: Classify sentiment (RoBERTa Sentiment Model) and regard (Regard v3) for dataset entries.
+2. Model Training and Evaluation
+Train and evaluate various models on EMGSD, with ablation studies on its three core datasets (MGSD, Augmented WinoQueer, and Augmented SeeGULL).
+
+BERT_Models_Fine_Tuning: Fine-tune and evaluate ALBERT-V2, DistilBERT, and BERT models.
+Logistic_Regression: Train logistic regression models using:
+TF-IDF vectorization
+Pre-trained embeddings (spaCy embeddings)
+DistilRoBERTaBias: Evaluate an open-source bias detection model (DistilRoBERTa Bias).
+GPT4_Models: Evaluate GPT-4o and GPT-4o-mini using API prompting (API credentials required).
+3. Model Explainability
+Interpret model predictions using SHAP and LIME. Weights for the fine-tuned ALBERT-V2 model are available at Hugging Face.
+
+SHAP_LIME_Analysis: Generate SHAP and LIME explanations for selected model predictions and compare their similarity using metrics such as:
+Cosine similarity
+Pearson correlation
+Jensen-Shannon divergence
+4. LLM Bias Evaluation
+Classify and evaluate bias in LLM responses using neutral prompts derived from EMGSD.
+
+LLM_Prompt_Verification: Verify neutrality of prompts using the fine-tuned ALBERT-V2 model.
+LLM_Bias_Evaluation: Classify LLM outputs to compute aggregate bias scores, representing stereotype prevalence.
+SHAP_LIME_Analysis_LLM_Outputs: Apply SHAP and LIME to interpret predictions on LLM outputs.
+
+/==================================================================/
